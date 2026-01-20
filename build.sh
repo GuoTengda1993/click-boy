@@ -9,6 +9,7 @@ build_mac() {
 
 build_win() {
     wails build --platform windows/amd64 -skipbindings
+}
 
 build() {
     echo "~~~ building mac start ~~~"
