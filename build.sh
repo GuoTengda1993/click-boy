@@ -1,7 +1,9 @@
 build_mac() {
     wails build
+    codesign --deep --force -s "MySign" -o runtime -v build/bin/click-boy.app
     rm -f click-boy.dmg
     appdmg dmg.json click-boy.dmg
+    codesign -s "MySign" click-boy.dmg
     mv click-boy.dmg build/bin
 }
 
